@@ -1,11 +1,12 @@
 import { nanoid } from '@reduxjs/toolkit';
-import { creatContacts } from 'components/redux/Reducer';
+// import { creatContacts } from 'components/redux/Reducer';
+import { addContactsThunk } from 'components/redux/thunk';
 import { useDispatch, useSelector } from 'react-redux';
 
 
 export const Form = () => {
   
-  const { contacts } = useSelector((state) => state);
+  const { items } = useSelector((state) => state.contacts.contacts);
   const dispatch = useDispatch();
 
   const onClick = (e) => {
@@ -16,7 +17,7 @@ export const Form = () => {
       return form.reset();
     }
 
-    const isAlredyContacts = contacts.find(el => el.name === name.value);
+    const isAlredyContacts = items.find(el => el.name === name.value);
     if (isAlredyContacts) return alert(`${name.value} is alredy in contacts.`);
 
     const newContacts = {
@@ -24,7 +25,7 @@ export const Form = () => {
       number: number.value,
       id: nanoid(),
     }
-    dispatch(creatContacts(newContacts))
+    dispatch(addContactsThunk(newContacts))
     form.reset();
   };
 

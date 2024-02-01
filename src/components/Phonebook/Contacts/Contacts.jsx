@@ -1,5 +1,5 @@
-export const Contacts = ({id, name, number, handDelete}) => {
+export const Contacts = ({id, name, phone, handDelete}) => {
     return (
-        <li>{name}: {number} <button type="button" onClick={()=>handDelete(id)}>Delete</button></li>
+        <li>{name}: {phone} <button type="button" onClick={()=>handDelete(id)}>Delete</button></li>
     )
 }
