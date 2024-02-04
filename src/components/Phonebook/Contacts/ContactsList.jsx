@@ -8,7 +8,7 @@ import { ColorRing } from 'react-loader-spinner';
 
 export const ContactsList = () => {
   //   const { filter } = useSelector(state => state.contacts);
-  const { isLoading } = useSelector(state => state.contacts.contacts);
+  const { isLoading } = useSelector(state => state.contacts);
   const filterContacts = useSelector(filterSelector);
 
   const dispatch = useDispatch();

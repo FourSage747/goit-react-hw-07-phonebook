@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 export const Form = () => {
   
-  const { items } = useSelector((state) => state.contacts.contacts);
+  const { items } = useSelector((state) => state.contacts);
   const dispatch = useDispatch();
 
   const onClick = (e) => {
